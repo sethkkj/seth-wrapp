@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wrapped Zap</title>
+
+  <link rel="stylesheet" href="styles/style.css"/>
+
+  <!-- Confetes -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="https://kit.fontawesome.com/78ebc60f35.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="app">
+
+  <p class="hint-scroll">Arraste para continuar 👆</p>
+
+  <main>
+    <div class="bg-layer bg1"></div>
+    <div class="bg-layer bg2"></div>
+
+    <button id="home">
+      <a href="wrapped.html">🏠</a>
+    </button>
+    
+    <button id="audioToggle" class="audio-btn">
+      🔊
+    </button>
+
+    <audio id="bgMusic" loop>
+      <source src="static/audio/wrapped.mp3" type="audio/mpeg">
+    </audio>
+
+    <section class="tela tela-0">
+      <button id="btn-play">▶ Começar Wrapped</button>
+      <div id="intro-usuarios">
+        <p id="ondetudo" class="titles">Preparados para relembrar tudo o que vocês viveram?</p>
+
+        <div class="usuarios-box">
+          <div class="usuario">
+            <img src="images/image1.png" alt="Usuário 1" id="usuimg01">
+            <p id="intro-usuario1">usu1</p>
+          </div>
+
+          <div class="usuario">
+            <img src="images/image2.png" alt="Usuário 2" id="usuimg02">
+            <p id="intro-usuario2">usu2</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tela tela-1">
+      <p id="data-inicio" class="titles">Início da conversa</p>
+      <div id="chat-preview"></div>
+    </section>
+
+    <section class="tela tela-2">
+      <p id="alalalal" class="titles">Vocês amam conversar</p>
+      <p id="total-msgs"></p>
+      <p id="media-msgs"></p>
+      <p class="mid">Os dois se amam mesmo né?! 😍</p>
+    </section>
+
+    <section class="tela tela-3" id="tela-agitada">
+      <p class="titles">Dia mais agitado</p>
+      <div id="calendario">
+        <div class="dias-semana">
+          <span class="fds">D</span><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span class="fds">S</span>
+        </div>
+        <div id="dias"></div>
+      </div>
+      <p id="dia-agitado"></p>
+      <p id="dia-agitado2"></p>
+      <p class="mid">Se duvidar, nesse dia até o Whatsapp cansou! 😬</p>
+    </section>
+
+    <section class="tela tela-4">
+
+      <div class="comparacao-container">
+        <p class="titles">Quem falou mais?</p>
+        <!-- USUÁRIO 01 -->
+        <div class="linha-user">
+
+          <div class="avatar-q">
+            <img id="img-01" src="images/image1.png">
+          </div>
+
+          <div class="barra-container">
+            <div id="barra-01" class="barra"></div>
+          </div>
+
+          <span id="num-01" class="numero">0</span>
+
+        </div>
+
+        <!-- USUÁRIO 02 -->
+        <div class="linha-user">
+
+          <div class="avatar-q">
+            <img id="img-02" src="images/image2.png">
+          </div>
+
+          <div class="barra-container">
+            <div id="barra-02" class="barra"></div>
+          </div>
+
+          <span id="num-02" class="numero">0</span>
+
+        </div>
+
+        <p id="maisfalou1" class="mid"></p>
+
+      </div>
+    </section>
+
+    <section class="tela tela-5">
+      <p id="t-emojis-enviados" class="titles">Fãs de Emojis</p>
+      <p id="alter-emoji"></p>
+      <p id="t-emojis-enviados2"></p>
+      <p class="mid">Será que conseguem adivinhar qual foi o mais usado? 🤔</p>
+    </section>
+
+    <section class="tela tela-6">
+      <p class="titles">Jogo dos Emojis</p>
+      <p>Tentem adivinhar qual o emoji mais usado na conversa!</p>
+      <div id="minijogo1"></div>
+      <p id="resultado1" class="mid">Resultado</p>
+    </section>
+
+    <section class="tela tela-7">
+      <p id="t-emojis" class="titles"></p>
+      <section class="emoji-section">
+        <div class="emoji-cards">
+
+          <!-- USUÁRIO 1 -->
+          <div class="emoji-card" id="user-1">
+
+            <div class="user-header">
+              <div class="avatar-e">
+                <img id="img-01" src="images/image1.png">
+              </div>
+              <span class="username" id="nome-1">Usuário 01</span>
+            </div>
+
+            <div class="emoji-list" id="emojis-1">
+              <!-- JS injeta aqui -->
+            </div>
+
+          </div>
+
+          <!-- USUÁRIO 2 -->
+          <div class="emoji-card" id="user-2">
+
+            <div class="user-header">
+              <div class="avatar-e">
+                <img id="img-02" src="images/image2.png">
+              </div>
+              <span class="username" id="nome-2">Usuário 02</span>
+            </div>
+
+            <div class="emoji-list" id="emojis-2">
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!--<p id="emojis-usuarios"></p>-->
+    </section>
+
+    <section class="tela tela-8">
+      <p id="h1-livro" class="titles">Se sua conversa fosse um livro, ela seria...</p>
+      <div class="livro-card">
+        <img src="images/5-red-book-png-image-image-2.png" alt="book" srcset="">
+        <p id="livro-equivalente"></p>
+        <p id="info-livro">(um livro normal tem aproximadamente <u>250</u> palavras por página)</p> <!-- lembrar de diminuir isso no CSS -->
+        <p id="total-palavras"></p>
+      </div>
+      <p class="mid">É uma história e tanto! 🤩</p>
+    </section>
+
+    <!--<section class="tela tela-9"> <!-- implementar sistema de mostrar a figurinha no site !!!
+      <p id="id" class="titles">A figurinha mais usada na conversa foi</p>
+      <img src="" alt="" id="stk-geral">
+    </section> -->
+
+    <section class="tela tela-10">
+      <p id="titulo-conquistas" class="titles">Suas Conquistas</p>
+      <p id="voceconq">conqs numero</p>
+      <section class="conquistas">
+        <div class="grid-conquistas">
+
+          <div class="card-conquista" id="maratonaobj">
+            <div class="icon">🔥</div>
+            <h3>Maratona</h3>
+            <p id="maratonadias">1 dias de conversa consecutivos</p>
+          </div>
+
+          <div class="card-conquista" id="figurinhaobj">
+            <div class="icon">📄</div>
+            <h3>Fã de Figurinha</h3>
+            <p id="figurinhasquant">1 de 1000 figurinhas trocadas</p>
+          </div>
+
+          <div class="card-conquista" id="coracaoobj">
+            <div class="icon">❤️‍🔥</div>
+            <h3>Coração Quente</h3>
+            <p id="coracaoquant">1 de 1000 corações trocados</p>
+          </div>
+
+          <div class="card-conquista" id="corujaobj">
+            <div class="icon">🦉</div>
+            <h3>Coruja</h3>
+            <p id="corujadias">1 de 1000 mensagens na madrugada</p>
+          </div>
+
+        </div>
+      </section>
+
+    </section>
+
+  </main>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

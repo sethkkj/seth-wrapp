@@ -1,0 +1,192 @@
+{
+    "geral": {
+        "inicio_conversa": "06/06/2024",
+        "total_mensagens": 492,
+        "total_palavras": 1446,
+        "total_emojis": 15,
+        "total_stickers": 11,
+        "total_coracoes": 0,
+        "mensagens_madrugada": 91,
+        "top_palavra": "mídia",
+        "primeiras_mensagens": [
+            {
+                "mensagem": "https://add.aternos.org/Ilycherryyy",
+                "autor": "vitor"
+            },
+            {
+                "mensagem": "61144",
+                "autor": "vitor"
+            },
+            {
+                "mensagem": "Ilycherryyy.aternos.me",
+                "autor": "vitor"
+            },
+            {
+                "mensagem": "oi",
+                "autor": "ian"
+            },
+            {
+                "mensagem": "beleza",
+                "autor": "ian"
+            },
+            {
+                "mensagem": "mas",
+                "autor": "ian"
+            },
+            {
+                "mensagem": "tu vai querer monitor nao",
+                "autor": "ian"
+            },
+            {
+                "mensagem": "?",
+                "autor": "ian"
+            },
+            {
+                "mensagem": "blz vo ver aki",
+                "autor": "ian"
+            },
+            {
+                "mensagem": "Show",
+                "autor": "vitor"
+            }
+        ],
+        "media_diaria_msg": 15
+    },
+    "participantes": {
+        "vitor": {
+            "mensagens": 225,
+            "emojis": 8,
+            "emoji_favorito": {
+                "emoji": "🔥",
+                "quantidade": 4
+            },
+            "sticker_favorito": {
+                "sticker": "STK-20250515-WA0079",
+                "quantidade": 3
+            },
+            "top_palavras": [
+                [
+                    "mídia",
+                    34
+                ],
+                [
+                    "oculta",
+                    34
+                ],
+                [
+                    "aq",
+                    17
+                ],
+                [
+                    "q",
+                    11
+                ],
+                [
+                    "n",
+                    10
+                ]
+            ],
+            "top_emojis": [
+                {
+                    "emoji": "🔥",
+                    "quantidade": 4
+                },
+                {
+                    "emoji": "🏻",
+                    "quantidade": 2
+                },
+                {
+                    "emoji": "😡",
+                    "quantidade": 1
+                }
+            ]
+        },
+        "ian": {
+            "mensagens": 267,
+            "emojis": 7,
+            "emoji_favorito": {
+                "emoji": "🔥",
+                "quantidade": 3
+            },
+            "sticker_favorito": {
+                "sticker": "STK-20250515-WA0079",
+                "quantidade": 4
+            },
+            "top_palavras": [
+                [
+                    "ai",
+                    21
+                ],
+                [
+                    "vou",
+                    18
+                ],
+                [
+                    "tu",
+                    17
+                ],
+                [
+                    "man",
+                    14
+                ],
+                [
+                    "tô",
+                    12
+                ]
+            ],
+            "top_emojis": [
+                {
+                    "emoji": "🔥",
+                    "quantidade": 3
+                },
+                {
+                    "emoji": "💭",
+                    "quantidade": 2
+                },
+                {
+                    "emoji": "🍁",
+                    "quantidade": 1
+                }
+            ]
+        }
+    },
+    "rankings": {
+        "quem_mais_falou": "ian",
+        "dia_mais_agitado": {
+            "data": "18/12/2025",
+            "mensagens": 81
+        },
+        "emoji_mais_usado": "🔥",
+        "sticker_mais_usado": "STK-20250515-WA0079"
+    },
+    "emojis": {
+        "🔥": 7,
+        "🍁": 1,
+        "💭": 2,
+        "💔": 1,
+        "😡": 1,
+        "🏻": 2,
+        "🙏": 1
+    },
+    "stickers": {
+        "STK-20250515-WA0079": 7,
+        "STK-20250515-WA0071": 4
+    },
+    "livro": {
+        "paginas_aproximadas": 5,
+        "livro_equivalente": "O Pequeno Príncipe – Antoine de Saint-Exupéry (~96 págs)"
+    },
+    "conquistas": {
+        "maratona_dias": 4,
+        "fa_de_figurinha": {
+            "quantidade": 11,
+            "atingiu_meta": false
+        },
+        "coracao_quente": {
+            "quantidade": 0,
+            "atingiu_meta": false
+        },
+        "coruja_mensagens": 91,
+        "total_conquistas": 2
+    }
+}

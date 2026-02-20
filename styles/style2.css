@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: "Google Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: #05010f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: white;
+}
+
+.bg-blur {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, #25d366, transparent);
+  filter: blur(140px);
+  animation: float 8s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  from { transform: translateY(-40px); }
+  to { transform: translateY(40px); }
+}
+.upload-box {
+  height: 50vh;
+  padding: 48px 40px;
+  width: 60vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+
+  text-align: center;
+  scroll-snap-align: start;
+
+  opacity: 1;
+  transition: 1.2s ease;
+
+  background: rgba(15, 15, 15, 0.404);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  position: relative;
+  z-index: 1;
+}
+
+/*
+.upload-box {
+  position: relative;
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 35px 40px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 40px #25d36528;
+  text-align: center;
+  color: white;
+  width: 350px;
+}
+*/
+
+.upload-box h1 {
+  margin-bottom: 8px;
+}
+
+.upload-box p {
+  font-size: 14px;
+  opacity: .7;
+}
+
+.file-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: #25d366;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.file-btn:hover {
+  transform: scale(1.05);
+}
+
+#fileName {
+  display: block;
+  margin: 12px 0;
+  font-size: 13px;
+  opacity: .8;
+}
+
+#enviar {
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(90deg,#19a74d,#25d366);
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(37, 211, 101, 0.267);
+  transition: 0.3s;
+}
+
+#enviar:hover {
+    box-shadow: 0 0 20px rgba(37, 211, 101, 0.37);
+}
+
+.loading {
+  display: none;
+  margin-top: 12px;
+  font-size: 14px;
+  opacity: .8;
+}
