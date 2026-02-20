@@ -8,6 +8,7 @@ import os
 import zipfile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 
 app = FastAPI()
 app.add_middleware(
@@ -27,6 +28,9 @@ RESULT_DIR = "results"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 os.makedirs(RESULT_DIR, exist_ok=True)
 
+@app.get("/")
+async def root():
+    return FileResponse("app/wrapped.html")
 
 @app.post("/upload")
 async def upload(file: UploadFile = File(...)):
@@ -378,4 +382,5 @@ def processar_zip(zip_path):
     }
 
     return resultado
+
 # ---------- PADRÕES ----------
