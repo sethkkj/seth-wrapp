@@ -1,16 +1,17 @@
+from fastapi import FastAPI, UploadFile, File
+from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+import uuid
+import os
+import zipfile
 import re
 import json
 from collections import defaultdict, Counter
 from datetime import datetime, timedelta
-from fastapi import FastAPI, UploadFile, File
-import uuid
-import os
-import zipfile
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
 
 app = FastAPI()
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -18,9 +19,16 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Servir HTML
-app.mount("/app", StaticFiles(directory=".", html=True), name="static")
+# 🔥 SERVE ARQUIVOS ESTÁTICOS (CSS, JS, IMAGENS)
+app.mount("/styles", StaticFiles(directory="styles"), name="styles")
+app.mount("/js", StaticFiles(directory="js"), name="js")
+app.mount("/images", StaticFiles(directory="images"), name="images")
 app.mount("/static", StaticFiles(directory="static"), name="static")
+
+# 🔥 ROTA PRINCIPAL (ABRE DIRETO WRAPPED)
+@app.get("/")
+async def home():
+    return FileResponse("wrapped.html")
 
 UPLOAD_DIR = "uploads"
 RESULT_DIR = "results"
@@ -28,26 +36,18 @@ RESULT_DIR = "results"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 os.makedirs(RESULT_DIR, exist_ok=True)
 
-@app.get("/")
-async def root():
-    return FileResponse("wrapped.html")
-
 @app.post("/upload")
 async def upload(file: UploadFile = File(...)):
-
     unique_id = str(uuid.uuid4())
 
     zip_path = f"{UPLOAD_DIR}/{unique_id}.zip"
     json_path = f"{RESULT_DIR}/{unique_id}.json"
 
-    # salva zip
     with open(zip_path, "wb") as f:
         f.write(await file.read())
 
-    # processa zip
     resultado = processar_zip(zip_path)
 
-    # salva json final
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(resultado, f, ensure_ascii=False, indent=4)
 
@@ -382,6 +382,4 @@ def processar_zip(zip_path):
     }
 
     return resultado
-
 # ---------- PADRÕES ----------
-
