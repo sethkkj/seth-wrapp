@@ -743,6 +743,7 @@ main.ativo::-webkit-scrollbar {
 }
 
 #resultado1 {
+  margin-top:10px;
   opacity: 0;
 }
 
@@ -886,3 +887,4 @@ main.ativo::-webkit-scrollbar {
   opacity: 1;
   transform: scale(1);
 }
+
