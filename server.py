@@ -30,6 +30,10 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 async def home():
     return FileResponse("wrapped.html")
 
+@app.get("/resultado.json")
+async def get_resultado():
+    return FileResponse("resultado.json")
+
 UPLOAD_DIR = "uploads"
 RESULT_DIR = "results"
 
@@ -382,4 +386,5 @@ def processar_zip(zip_path):
     }
 
     return resultado
+
 # ---------- PADRÕES ----------
