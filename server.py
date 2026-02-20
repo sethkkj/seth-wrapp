@@ -30,7 +30,7 @@ os.makedirs(RESULT_DIR, exist_ok=True)
 
 @app.get("/")
 async def root():
-    return FileResponse("app/wrapped.html")
+    return FileResponse("wrapped.html")
 
 @app.post("/upload")
 async def upload(file: UploadFile = File(...)):
@@ -384,3 +384,4 @@ def processar_zip(zip_path):
     return resultado
 
 # ---------- PADRÕES ----------
+
