@@ -34,7 +34,7 @@ btn.onclick = async () => {
 
     const data = await res.json();
 
-    window.location.href = `/app/wrapped.html?id=${data.id}`;
+    window.location.href = `wrapped.html?id=${data.id}`;
 
   } catch (err) {
 
