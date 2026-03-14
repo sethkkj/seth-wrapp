@@ -28,7 +28,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 # 🔥 ROTA PRINCIPAL (ABRE DIRETO WRAPPED)
 @app.get("/")
 async def home():
-    return FileResponse("upload.html")
+    return FileResponse("wrapped.html")
 
 @app.get("/resultado.json")
 async def get_resultado():
@@ -136,7 +136,7 @@ def processar_zip(zip_path):
     total_coracoes = 0
 
     # ---------- LEITURA ----------
-    with open("chat-01/chat01-nomidias.txt", "r", encoding="utf-8") as arquivo:
+    with open("chat-amor/conversa-amor.txt", "r", encoding="utf-8") as arquivo:
         for linha in arquivo:
             linha = linha.strip()
             match = padrao_msg.match(linha)
@@ -351,7 +351,7 @@ def processar_zip(zip_path):
                 "mensagens": mensagens_por_pessoa[p],
                 "emojis": emojis_por_pessoa[p],
                 "emoji_favorito": emoji_favorito_por_pessoa[p],
-                "sticker_favorito": sticker_favorito_por_pessoa[p],
+                "sticker_favorito": sticker_favorito_por_pessoa.get(p),
                 "top_palavras": top_palavras_por_pessoa[p],
                 "top_emojis": top3_emojis_por_usuario[p]
             }
@@ -386,5 +386,4 @@ def processar_zip(zip_path):
     }
 
     return resultado
-
 # ---------- PADRÕES ----------
