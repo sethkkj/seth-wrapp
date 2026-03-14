@@ -28,7 +28,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 # 🔥 ROTA PRINCIPAL (ABRE DIRETO WRAPPED)
 @app.get("/")
 async def home():
-    return FileResponse("wrapped.html")
+    return FileResponse("upload.html")
 
 @app.get("/resultado.json")
 async def get_resultado():
